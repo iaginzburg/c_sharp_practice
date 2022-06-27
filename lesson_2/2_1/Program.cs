@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int LastDigitOfNum (int num){
+return num%10;
+}
+
+Console.WriteLine(LastDigitOfNum (456));
+Console.WriteLine(LastDigitOfNum (782));
+Console.WriteLine(LastDigitOfNum (918));
