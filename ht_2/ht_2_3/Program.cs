@@ -12,7 +12,7 @@ int CheckQualityOfDigits_v2(int num)
     int lowBorder = -10;
     int highBorder = 10;
     bool flg = true;
-    while (flg)
+    while (true)
     {
         if (lowBorder < num && num < highBorder)
         {
@@ -25,12 +25,13 @@ int CheckQualityOfDigits_v2(int num)
             numOfDigits++;
         }
     }
-    return 0;
+    
     // if (-10 < num && num < 10) return 1;
     // if (-100 < num && num < 100) return 2;
     // if (-1000 < num && num < 1000) return 3;
     // if (-10000 < num && num < 10000) return 4;
-    // if (-100000 < num && num < 100000) return 5;  
+    // if (-100000 < num && num < 100000) return 5; 
+    return 0; 
 }
 
 
@@ -46,21 +47,17 @@ if (CheckQualityOfDigits_v2(num_int_1) < 3)
 else
 {
     int digit3;
-    if (CheckQualityOfDigits_v2(num_int_1) == 3) {
-       digit3 = num_int_1%10; 
+    int coefOfPositinonMarker = 1;
+    int qualityOfDigits = CheckQualityOfDigits_v2(num_int_1);
+    while (qualityOfDigits > 3)
+    {
+        coefOfPositinonMarker *= 10;
+        qualityOfDigits -= 1;
     }
-    else {
-        int qualityOfDigits = CheckQualityOfDigits_v2(num_int_1);
-        int coefOfPositinonMarker = 1;
-        while (qualityOfDigits > 3)
-        {coefOfPositinonMarker *=10;
-        qualityOfDigits -=1;
-        }
-        digit3 = num_int_1/coefOfPositinonMarker%10;
-    }
+    digit3 = num_int_1 / coefOfPositinonMarker % 10;
+     if (digit3 < 0) digit3 = digit3 * -1;
     Console.WriteLine("Третья цифра " + digit3);
 }
 
 
-// Console.WriteLine(num_int_1%10);
 // Console.WriteLine(num_int_1/10%10);
