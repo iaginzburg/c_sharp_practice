@@ -2,6 +2,11 @@
 // Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
+// Math.Round(n_new.NextDouble() * (10 + 12) - 10, 2)
+// Random n_new = new Random();
+
+
+
 void Print(decimal [] arr)
 {
     int size = arr.Length;
